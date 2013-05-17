@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txtPageTitle"
+        style="@style/WizardPageTitle"
+        android:text="Large Text" />
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtDescription1"
+            style="@style/WizardItem"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="Description" />
+
+        <LinearLayout
+            android:id="@+id/buttonlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/buttonborder"
+            android:padding="3dp" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selectable_item_background"
+                android:padding="6dp"
+                android:text="Button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                android:id="@+id/txtProgress1"
+                style="@style/WizardItem"
+                android:layout_gravity="center_vertical"
+                android:text="Doing Something" />
+
+            <ProgressBar
+                android:id="@+id/progress1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateBehavior="cycle" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<resources>
+
+    <!--
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style>
+
+    
+    	
+	<style name="WizardPageTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="android:paddingRight">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#ff0099cc</item>
+    </style>
+    
+	<style name="WizardItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="android:paddingRight">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ff0099cc</item>
+    </style>
+		
+		
+	<style name="TextAppearanceFinish" parent="android:TextAppearance.Holo.Medium">
+        <item name="android:textColor">#fff</item>
+    </style>
+    
+	
+</resources>

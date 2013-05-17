@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+>
+	<LinearLayout 
+	    android:id="@+id/mainlayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" >
+	
+		<TextView
+		    android:id="@+id/messagecategory"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="6dp"
+		    android:text="Small Text"
+		    android:textAppearance="?android:attr/textAppearanceSmall"
+		    android:textColor="@color/text_light" />	    
+	    
+	    <TextView
+	        android:id="@+id/messagetext"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="8dp"
+	        android:text="Medium Text"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <LinearLayout
+	        android:id="@+id/bottomrow"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	
+	        <TextView
+	            android:id="@+id/messagetime"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="6dp"
+	            android:layout_weight="1"
+	            android:text="Small Text"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:textColor="@color/text_light" />
+	
+	        <ImageView
+	            android:id="@+id/imageNotification"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/type_notification_off" />
+	
+	        <ImageView
+	            android:id="@+id/imageAlert"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/type_alert_off" />
+
+			<ImageView
+	            android:id="@+id/imageVibrate"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/type_vibrate_off" />
+	        		        
+	        <ImageView
+	            android:id="@+id/imageSpeech"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/type_speak_off" />
+	
+
+	    </LinearLayout>
+	
+	</LinearLayout>
+	
+	<ImageView android:id="@+id/throbber"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/ic_popup_sync_1"
+		android:visibility="gone"
+	/>
+	
+</FrameLayout>
+
+
