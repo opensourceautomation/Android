@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/pref_generalsettings" android:key="generalsettings">
+        
+		<Preference 
+			android:key="wizard"
+			android:title="@string/pref_wizard_title" 
+			android:summary="@string/pref_wizard_summary" /> 		
+	    
+		<EditTextPreference 
+		    android:key="serveraddress"
+			android:title="@string/pref_serveraddress_title" 
+			android:summary="@string/pref_serveraddress_summary"/>
+			
+		<Preference 
+			android:key="regid"
+			android:title="@string/pref_regid_title" 
+			android:summary="@string/pref_regid_summary" /> 
+				
+	</PreferenceCategory>
+    
+	<PreferenceCategory android:title="@string/pref_sharerate" android:key="sharerate">
+		
+		    <Preference 
+			    android:key="rateapp"
+			    android:title="@string/pref_rateapp_title" 
+			    android:summary="@string/pref_rateapp_summary" />
+		    
+		    <Preference 
+			    android:key="shareapp"
+			    android:title="@string/pref_shareapp_title" 
+			    android:summary="@string/pref_shareapp_summary" />
+		    
+	</PreferenceCategory>
+    
+    <PreferenceCategory android:title="Log Settings" android:key="logsettings">
+        
+		<CheckBoxPreference android:key="acra.enable"
+		    android:title="@string/pref_disable_acra"
+		    android:summaryOn="@string/pref_acra_enabled"
+		    android:summaryOff="@string/pref_acra_disabled"
+		    android:defaultValue="true"/>
+	
+		<EditTextPreference android:key="acra.user.email"
+	    	android:title="@string/pref_acra_user_email"
+	    	android:summary="@string/pref_acra_user_email_summary"/>
+		
+		<CheckBoxPreference android:key="acra.syslog.enable"
+		    android:summaryOn="@string/pref_acra_syslog_enabled"
+		    android:summaryOff="@string/pref_acra_syslog_disabled"
+		    android:title="@string/pref_acra_syslog"
+		    android:defaultValue="true"/>
+			
+		<CheckBoxPreference android:key="verboselogging"
+		    android:summaryOn="@string/pref_verboselogging_summary_on"
+		    android:summaryOff="@string/pref_verboselogging_summary_off"
+		    android:title="@string/pref_verboselogging_title"
+		    android:defaultValue="false"/>
+			
+	</PreferenceCategory>
+    
+	
+</PreferenceScreen>
