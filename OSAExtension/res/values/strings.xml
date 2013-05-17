@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">osaextension</string>
+    <string name="menu_settings">Settings</string>
+    
+    <string name="error_config">Please set the %1$s constant and recompile the app.</string> 
+    <string name="already_registered">Device is already registered on server.</string> 
+    <string name="gcm_registered">From GCM: device successfully registered!</string> 
+    <string name="gcm_unregistered">From GCM: device successfully unregistered!</string> 
+    <string name="gcm_message">From GCM: you got message!</string> 
+    <string name="gcm_error">From GCM: error (%1$s).</string> 
+    <string name="gcm_recoverable_error">From GCM: recoverable error (%1$s).</string> 
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string> 
+    
+    <string name="server_registering">Trying (attempt %1$d/%2$d) to register device on Server.</string> 
+    <string name="server_registered">From Server: successfully added device!</string> 
+    <string name="server_unregistered">From Server: successfully removed device!</string> 
+    <string name="server_register_error">Could not register device on Server after %1$d attempts.</string> 
+    <string name="server_unregister_error">Could not unregister device on Server (%1$s).</string> 
+        
+    <string name="txt_next">Next</string>
+    <string name="txt_prev">Previous</string>
+    <string name="txt_finish">Finish</string>
+    
+    <string name="txt_osaserver">OSA Server</string>
+    <string name="txt_serveraddress">Server Address</string>
+    <string name="txt_testconnection">Test Connection</string>
+    <string name="txt_testingconnection">Testing Connection</string>
+    <string name="txt_connectionerror">Error Connecting to OSA server</string>
+    <string name="txt_connectionsuccessful">Successfully Connected</string>
+    
+    <string name="txt_register">Register</string>
+    <string name="txt_registerdevice">Register Device</string>
+    <string name="txt_registering">Registering</string>
+    <string name="txt_registerwithgcm">Register for Google Cloud Messaging</string>
+    <string name="txt_registererror">Error Registering</string>
+    <string name="txt_registersuccessful">Registered Successfully</string>
+
+    <string name="txt_object">Object</string>
+    <string name="txt_objectname">Object Name</string>
+    <string name="txt_createobject">Create Object</string>
+    <string name="txt_creatingobject">Creating Object</string>
+    <string name="txt_creationerror">Error Creating Object</string>
+    <string name="txt_creationsuccessful">Created Object</string>
+    <string name="txt_linkobject">Link Object</string>
+    <string name="txt_linkingobject">Linking Object</string>
+    <string name="txt_linkerror">Error Linking Object</string>
+    <string name="txt_linksuccessful">Linked Object</string>
+    <string name="txt_noobjects">No Android Devices on Server</string>
+    <string name="txt_selectexisting">Or Select Existing</string>
+    
+    <string name="txt_test">Test</string>
+    <string name="txt_testnotification">Send Test Notification</string>
+    <string name="txt_testing">sending test</string>
+    <string name="txt_testerror">Error Sending Test</string>
+    <string name="txt_testsuccessful">Successfully Sent Test</string>
+    
+    <string name="txt_add">Add</string>
+    <string name="txt_edit">Edit</string>
+    <string name="txt_name">Category Name:</string>
+    <string name="txt_level">Levels:</string>
+    <string name="txt_notificationtypes">Notification Types:</string>
+    <string name="txt_notification">Notification</string>
+    <string name="txt_alert">Alert</string>
+    <string name="txt_speech">Speech</string>
+    <string name="txt_vibrate">Vibrate</string>
+    <string name="txt_save">Save</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_cancel">Cancel</string>
+    
+    
+    <string name="pref_generalsettings">General Settings</string>
+    
+    <string name="pref_wizard_title">Wizard</string>
+    <string name="pref_wizard_summary">Run the setup wizard</string>
+    
+    <string name="pref_serveraddress_title">OSA Server Address</string>
+    <string name="pref_serveraddress_summary"></string>
+        
+    <string name="pref_regid_title">GCM Registration ID</string>
+    <string name="pref_regid_summary">not registered yet</string>
+    
+    
+    <string name="txt_sharetext">Get this OSA plugin for Android. </string>
+    <string name="txt_sharesubjext">OSA Extension for Android</string>
+    <string name="txt_sharetitle">Share</string>
+    
+    <string name="pref_sharerate">Share/Rate App</string>
+	<string name="pref_shareapp_title">Share the app</string>
+	<string name="pref_shareapp_summary">share OSA Extension with others.</string>
+	<string name="pref_rateapp_title">Rate the app</string>
+	<string name="pref_rateapp_summary">please rate us and give us feedback in the Google Play Store!</string>
+		
+	<string name="pref_verboselogging_summary_on">Show more log entries in logcat (helps troubleshooting bugs)</string>
+    <string name="pref_verboselogging_summary_off">Show less log entries in logcat</string>
+    <string name="pref_verboselogging_title">Verbose Logging</string>
+
+    <string name="pref_disable_acra">Send Errors to developer</string>
+    <string name="pref_acra_disabled">No, don\'t send any errors</string>
+    <string name="pref_acra_enabled">Yes, send errors to help developer fix bugs</string>
+    
+    <string name="pref_acra_syslog">Send Log Data With Errors</string>
+    <string name="pref_acra_syslog_disabled">No, don\'t send any log data with error reports</string>
+    <string name="pref_acra_syslog_enabled">Yes, send log data with error reports</string>
+	    
+    <string name="pref_acra_user_email">Attach Email to Reports</string>
+    <string name="pref_acra_user_email_summary">enter an email address here if you want support to contact you back about errors you are getting</string>
+    	
+    
+    
+</resources>
