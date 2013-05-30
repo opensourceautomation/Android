@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+     Because plug-ins interact with Locale as a background service, plug-ins MUST be installed to internal memory. This is 
+    consistent with Google's app install location guidelines: <http://developer.android.com/guide/appendix/install-location.html#Should>. 
+    Note that Locale will reject plug-ins set to either installLocation="auto" OR installLocation="preferExternal". A plug-in MUST
+    specify "internalOnly" or omit the android:installLocation attribute entirely.
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fivehellions.android.osaextension"
-    android:versionCode="2"
-    android:versionName="0.11" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.opensourceautomation.android.osaextension"
+    android:versionCode="4"
+    android:versionName="0.13"
+    android:installLocation="internalOnly" >
 
+	<!-- This allows the plug-in to appear on non-touchscreen devices like Google TV.  Be sure to test that the app works without a touchscreen. -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
 
+    <!-- Although many of these default to true, some users with modified ROMs have trouble seeing apps unless these attributes are explicitly set. -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+    
+    
     <!-- permission so notification can vibrate -->
 	<uses-permission android:name="android.permission.VIBRATE" /> 
-		
+
+	<!-- permission to run tasker tasks -->
+	<uses-permission android:name="net.dinglisch.android.tasker.PERMISSION_RUN_TASKS" />		
+	
+	
     <!-- GCM requires Android SDK version 2.2 (API level 8) or above. -->
     <!-- The targetSdkVersion is optional, but it's always a good practice
          to target higher versions. -->
@@ -29,24 +55,28 @@
            where PACKAGE is the application's package name.
     -->
     <permission
-        android:name="com.fivehellions.android.osaextension.permission.C2D_MESSAGE"
+        android:name="com.opensourceautomation.android.osaextension.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
     <uses-permission
-        android:name="com.fivehellions.android.osaextension.permission.C2D_MESSAGE" />
+        android:name="com.opensourceautomation.android.osaextension.permission.C2D_MESSAGE" />
 
     <!-- This app has permission to register and receive data message. -->
     <uses-permission
         android:name="com.google.android.c2dm.permission.RECEIVE" />
 
+    
     <!-- Main activity. -->
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:name="MyApplication" >
+        android:name="com.opensourceautomation.android.osaextension.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.opensourceautomation.android.osaextension.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"
+            android:theme="@android:style/Theme.NoTitleBar"
              >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,6 +85,7 @@
             </intent-filter>
         </activity>
         
+        <activity android:label="@string/txt_alerts" android:name=".MessagesActivity" android:theme="@style/AppTheme"></activity>
 		<activity android:label="Wizard" android:name=".WizardActivity" android:theme="@style/AppTheme"></activity>
 		<activity android:label="Settings" android:name=".Settings" android:theme="@style/AppTheme"></activity>
 		<activity android:label="Category Edit" android:name=".NotificationTypeEdit" android:theme="@style/AppTheme"></activity>
@@ -74,7 +105,7 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <!-- Receives the registration id. -->
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="com.fivehellions.android.osaextension" />
+                <category android:name="com.opensourceautomation.android.osaextension" />
             </intent-filter>
         </receiver>
 
@@ -87,7 +118,68 @@
         -->
         <service android:name=".GCMIntentService" />
         
-        <service android:name=".TTSService" />
+        <service android:name="com.opensourceautomation.android.osaextension.utilities.TTSService" />
+        
+        
+        <!-- ACTIVITY AND RECIEVER FOR TASKER/LOCALE PLUGIN-->
+        <!--
+             This is the "edit" Activity. Note that Locale will reject plug-in Activities for the following reasons: 
+                 - Missing "android:label=[...]"
+                 - Missing "android:icon=[...]"
+                 - The Activity isn't exported (e.g. android:exported="false")
+                 - The Activity isn't enabled (e.g. android:enabled="false")
+                 - The Activity requires permissions not available to Locale
+        -->
+        <activity
+            android:name="com.opensourceautomation.android.osaextension.tasker.TaskerConfigureNamedScript"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/plugin_namedscript"
+            android:theme="@style/AppTheme"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="ExportedActivity" >
+
+            <!-- this Intent filter allows the plug-in to be discovered by Locale -->
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name="com.opensourceautomation.android.osaextension.tasker.TaskerConfigureMethod"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/plugin_method"
+            android:theme="@style/AppTheme"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="ExportedActivity" >
+
+            <!-- this Intent filter allows the plug-in to be discovered by Locale -->
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
+            </intent-filter>
+        </activity>        
+         <!--
+             This is the "fire" BroadcastReceiver. Note that Locale will reject plug-in BroadcastReceivers for the following reasons:
+                - The BroadcastReceiver isn't exported (e.g. android:exported="false")
+                - The BroadcastReceiver isn't enabled (e.g. android:enabled="false")
+                - The BroadcastReceiver requires permissions not available to Locale
+                - There are multiple BroadcastReceivers for com.twofortyfouram.locale.intent.action.FIRE_SETTING
+        -->
+        <receiver
+            android:name="com.opensourceautomation.android.osaextension.tasker.FireReceiver"
+            android:exported="true"
+            android:process=":background"
+            tools:ignore="ExportedReceiver" >
+
+            <!-- this Intent filter allows the plug-in to discovered by Locale -->
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
+            </intent-filter>
+        </receiver>
+        
     </application>
     
 </manifest>
