@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">osaextension</string>
+    <string name="app_name">OSA</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_alerts">Alerts</string>
+    <string name="menu_webui">Web UI</string>
+    <string name="txt_alerts">Alerts</string>
+    
+    <string name="Initiate_Speech_Recognition">Press to initiate speech recognition</string>
     
     <string name="error_config">Please set the %1$s constant and recompile the app.</string> 
     <string name="already_registered">Device is already registered on server.</string> 
@@ -77,7 +82,13 @@
     
     <string name="pref_serveraddress_title">OSA Server Address</string>
     <string name="pref_serveraddress_summary"></string>
-        
+    <string name="pref_serverrestport_title">Server Rest Port</string>
+    <string name="pref_serverrestport_summary"></string>
+    <string name="pref_serverhttpport_title">Server HTTP Port</string>
+    <string name="pref_serverhttpport_summary"></string>
+    <string name="pref_serverhttppage_title">Default HTTP page</string>
+    <string name="pref_serverhttppage_summary"></string>
+            
     <string name="pref_regid_title">GCM Registration ID</string>
     <string name="pref_regid_summary">not registered yet</string>
     
@@ -107,6 +118,17 @@
     <string name="pref_acra_user_email">Attach Email to Reports</string>
     <string name="pref_acra_user_email_summary">enter an email address here if you want support to contact you back about errors you are getting</string>
     	
-    
+	<!-- Name of the plug-in that appears in Locale/Tasker -->
+    <string name="plugin_namedscript">OSA Pattern Match</string>
+	<string name="plugin_method">OSA Object Method</string>
+
+    <string name="txt_pattermatch">Pattern To Match</string>
+    <string name="txt_pickcontainer">Select Container</string>
+    <string name="txt_pickobject">Select Object</string>
+    <string name="txt_pickmethod">Select Method</string>
+    <string name="txt_pickparameters">Enter Parameters</string>
+    <string name="nav_back">&lt;--BACK</string>
+    <string name="txt_p1">Parameter 1</string>
+    <string name="txt_p2">Parameter 2</string>
     
 </resources>

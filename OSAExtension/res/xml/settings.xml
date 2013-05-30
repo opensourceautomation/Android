@@ -12,6 +12,21 @@
 		    android:key="serveraddress"
 			android:title="@string/pref_serveraddress_title" 
 			android:summary="@string/pref_serveraddress_summary"/>
+		
+		<EditTextPreference 
+		    android:key="serverRestPort"
+			android:title="@string/pref_serverrestport_title" 
+			android:summary="@string/pref_serverrestport_summary"/>
+		
+		<EditTextPreference 
+		    android:key="serverHttpPort"
+			android:title="@string/pref_serverhttpport_title" 
+			android:summary="@string/pref_serverhttpport_summary"/>
+		
+		<EditTextPreference 
+		    android:key="serverHttpPage"
+			android:title="@string/pref_serverhttppage_title" 
+			android:summary="@string/pref_serverhttppage_summary"/>						
 			
 		<Preference 
 			android:key="regid"

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/acra-4.3.0RC-6c19e3a88a5636d22f37d5a31d14b569.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/aalibrary_cwac-endless-listview-4536f508a4a2206b4ff50f95f2a29af7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-ca1ec0cf449c3df4b41338240d70acbc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/aalibrary_locale-api-0559232dcc7e9757455bca93fd377540.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/aalibrary_viewpagerindicator-4c0da850594a0ece998092e13e8a52ce.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/CWAC-AdapterWrapper-7d4c682edae79f4ad8ba7432179b0b16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/annotations-36c7b6d30829bd0bc16cac31480649fb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gcm-e9d6843ef5e3e3f65ccc59d2803291f8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
