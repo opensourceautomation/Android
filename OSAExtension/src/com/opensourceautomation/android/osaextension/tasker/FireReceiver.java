@@ -81,10 +81,18 @@ public final class FireReceiver extends BroadcastReceiver
 	    		SharedPreferences mypreferences = PreferenceManager.getDefaultSharedPreferences(myContext);
 	    		String serveraddress=mypreferences.getString("serveraddress","");
 	            
+	    		String ecodednamedscript=namedscript;
+	    		//encode invalid characters in the parameters
+	    		try {
+	    			ecodednamedscript = URLEncoder.encode(namedscript, "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	    		
 				//send call to rest api for namedscript
 				String url;
-				url="http://"+serveraddress+":8732/api/namedscript/"+namedscript+"";
+				url="http://"+serveraddress+":8732/api/namedscript/"+ecodednamedscript+"";
 				
 				RestClient client = new RestClient(myContext,url);
 	

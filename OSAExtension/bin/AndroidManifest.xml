@@ -26,7 +26,6 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
     
-    
     <!-- permission so notification can vibrate -->
 	<uses-permission android:name="android.permission.VIBRATE" /> 
 
